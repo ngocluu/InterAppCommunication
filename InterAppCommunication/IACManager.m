@@ -78,7 +78,7 @@ typedef NS_ENUM(NSUInteger, IACResponseType) {
     }
     
     // If the url is an x-callback-url compatible url we handle it
-    if ([url.host isEqualToString:kXCUHost]) {
+    if ([url.host isEqualToString:kXCUHost] && [url path].length > 0) {
         NSString     *action     = [[url path] substringFromIndex:1];
         NSDictionary *parameters = [url.query parseURLParams];
         NSDictionary *actionParamters = [self removeProtocolParamsFromDictionary:parameters];
