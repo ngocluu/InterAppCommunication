@@ -33,7 +33,7 @@
     [pairs enumerateObjectsUsingBlock:^(NSString *pair, NSUInteger idx, BOOL *stop) {
         NSArray *comps = [pair componentsSeparatedByString:@"="];
         if ([comps count] == 2 && comps[1]) {
-            [result setObject:[comps[1] stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding] forKey:comps[0]];
+            [result setObject:[comps[1] stringByRemovingPercentEncoding] forKey:comps[0]];
         }
     }];
     

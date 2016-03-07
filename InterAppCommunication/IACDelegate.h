@@ -8,10 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
+NS_ASSUME_NONNULL_BEGIN
 
 // Block templates
-typedef void(^IACSuccessBlock)(NSDictionary* returnParams,BOOL cancelled);
-typedef void(^IACFailureBlock)(NSError* error);
+typedef void(^IACSuccessBlock)(NSDictionary<NSString*, NSString*>* _Nullable returnParams,BOOL cancelled);
+typedef void(^IACFailureBlock)(NSError* _Nullable error);
 
 
 @protocol IACDelegate <NSObject>
@@ -30,3 +31,5 @@ typedef void(^IACFailureBlock)(NSError* error);
                onFailure:(IACFailureBlock)failure;
 
 @end
+
+NS_ASSUME_NONNULL_END

@@ -12,6 +12,8 @@
 @protocol IACDelegate;
 @class IACRequest;
 
+NS_ASSUME_NONNULL_BEGIN
+
 // Error domains that this framework will use in error callbacks
 extern NSString * const IACErrorDomain;
 extern NSString * const IACClientErrorDomain;
@@ -23,8 +25,7 @@ typedef NS_ENUM(NSInteger, IACError) {
 };
 
 // Block template for action handlers
-typedef void(^IACActionHandlerBlock)(NSDictionary* inputParameters, IACSuccessBlock success, IACFailureBlock failure);
-
+typedef void(^IACActionHandlerBlock)(NSDictionary<NSString*, NSString*>* inputParameters, IACSuccessBlock success, IACFailureBlock failure);
 
 @interface IACManager : NSObject
 
@@ -52,3 +53,5 @@ typedef void(^IACActionHandlerBlock)(NSDictionary* inputParameters, IACSuccessBl
 - (void)sendIACRequest:(IACRequest*)request;
 
 @end
+
+NS_ASSUME_NONNULL_END
