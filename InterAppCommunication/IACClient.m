@@ -6,6 +6,7 @@
 //  Copyright (c) 2013 Antonio Cabezuelo Vivo. All rights reserved.
 //
 
+#import <UIKit/UIKit.h>
 #import "IACClient.h"
 #import "IACRequest.h"
 #import "IACManager.h"
